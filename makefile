@@ -20,6 +20,5 @@ $(LINK_TARGET): $(OBJ) code.o
 %.o: %.c
 	$(CC) -c -I$(INCLUDE_PATH) $< -o $@
 # rule to generate a dep file by using the C preprocessor
-# (see man cpp for details on the -MM and -MT options)
 %(DEPENDENCY_PATH).d: %.c
 	$(CC) $(CFLAGS) $< -MM -MT $(@:$(DEPENDENCY_PATH).d=.o) >$@
